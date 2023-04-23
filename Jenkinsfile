@@ -3,10 +3,7 @@ pipeline {
     stages { 
         stage('checkout SCM') {
             steps {
-                git (
-                    url: https://github.com/srinivas-0/sample-pipeline.git
-                    branch: "${branch}"
-                )
+               checkout([$class: 'GitSCM', branches: [[name, '*/test']], UserRemoteConfigs: [[url: 'https://github.com/srinivas-0/sample-pipeline.git']]])
             }
         }
     }
