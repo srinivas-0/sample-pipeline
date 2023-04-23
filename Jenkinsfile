@@ -1,9 +1,12 @@
 pipeline {
     agent any
     stages { 
-        stage('checkout') {
+        stage('checkout SCM') {
             steps {
-                echo "Hello World!!"
+                git (
+                    url: https://github.com/srinivas-0/sample-pipeline.git
+                    branch: "${branch}"
+                )
             }
         }
     }
