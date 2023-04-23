@@ -1,5 +1,6 @@
 pipeline {
     agent any
+    import groovy.transform.Field
     stages { 
         stage('checkout SCM') {
             steps {
