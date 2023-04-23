@@ -6,5 +6,10 @@ pipeline {
               sh "git clone https://github.com/srinivas-0/sample-pipeline.git"
             }
         }
+        stage('Build') {
+          steps {
+            sh "mvn clean install"
+          }
+        }
     }
 }
